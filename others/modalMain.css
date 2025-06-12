@@ -1,0 +1,62 @@
+/*Archivo que le da el estilado a mi modal de mi pagina principal para que se vean las reseñas
+de cada restaurante*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContainer {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 35rem;
+    gap: 2rem;
+}
+
+.modalShow {
+    display: flex;
+}
+
+.modalContainer h1 {
+    font-size: 2.5rem;
+    color: #B771E5;
+    text-align: center;
+}
+
+.modalContainer p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.closeModal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.review {
+    border: solid #B771E5 2px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.review:last-child {
+    margin-bottom: 0;
+}

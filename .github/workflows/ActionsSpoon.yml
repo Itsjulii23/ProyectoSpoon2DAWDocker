@@ -1,0 +1,64 @@
+name: ActionsSpoonDocker
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      DBUSERNAME: ${{ secrets.DBUSERNAME }}
+      DBPASSWORD: ${{ secrets.DBPASSWORD }}
+
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4
+
+      - name: Levantar contenedores
+        run: docker compose up -d --build
+
+      - name: Esperar a que MySQL esté disponible desde web
+        run: |
+          docker compose exec web bash -c '
+            for i in {30..0}; do
+              if php -r "
+                try {
+                  new PDO(\"mysql:host=db;dbname=scoop\", \"${{ env.DBUSERNAME }}\", \"${{ env.DBPASSWORD }}\");
+                } catch (PDOException \$e) {
+                  exit(1);
+                }
+              "; then
+                echo \"MySQL está disponible\"
+                exit 0
+              fi
+              echo \"Esperando a MySQL...\"
+              sleep 2
+            done
+            echo \"MySQL no respondió a tiempo\"
+            exit 1
+          '
+
+      - name: Dar permisos de ejecución a phpunit
+        run: docker compose exec web chmod +x vendor/bin/phpunit
+
+      - name: Dar permisos a www-data
+        run: docker compose exec web chown -R www-data:www-data /var/www/html
+
+      - name: Ejecutar tests como www-data
+        run: docker compose exec -u www-data web vendor/bin/phpunit --configuration phpunit.xml
+
+      - name: Hacer commit y push de los cambios
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update Changes
+          commit_user_name: Itsjulii23 [Github Actions]
+          commit_user_email: j.campillosmartinez@gmail.com
+
+      - name: Parar los contenedores
+        if: always()
+        run: docker compose down

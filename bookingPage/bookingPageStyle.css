@@ -1,0 +1,102 @@
+/* Archivo css que se encarga de darle el estilado a nuestra interfaz de las reservas que
+tenemos realizadas*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#reservas {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.reserva {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 70rem;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reserva:hover {
+    transform: scale(1.02);
+}
+
+.reserva h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.datosReserva p {
+    color: #555;
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.buttonsReserva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.eliminarReserva {
+    background: #dc3545;
+    color: white;
+}
+
+.eliminarReserva:hover {
+    background: #c82333;
+}
+
+.modificarReserva {
+    background: #007bff;
+    color: white;
+}
+
+.modificarReserva:hover {
+    background: #0056b3;
+}
+
+.sinReservas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    #reservas {
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        align-items: center;
+        gap: 3rem;
+    }
+}

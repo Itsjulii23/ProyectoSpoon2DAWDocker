@@ -1,0 +1,81 @@
+/*Archivo que se dedica a darle el estilado a mi interfaz de la edicion del perfil*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.registerForm {
+    width: 50rem;
+    height: auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f0f0, #d3d3d3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 40%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-row input {
+    width: 55%;
+    padding: 5px;
+}
+
+
+h3 {
+    font-size: 3rem;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+input {
+    height: 2.5rem;
+}
+
+button {
+    height: 2.5rem;
+    background-color: violet;
+    cursor: pointer;
+    transition: 0.2s;
+    color: black;
+}
+
+button:hover {
+    background-color: rgb(179, 0, 255);
+    color: white;
+}

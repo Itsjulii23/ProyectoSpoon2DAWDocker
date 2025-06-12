@@ -1,0 +1,137 @@
+/*Se encarga de dar el estilado a nuestra interfaz de la pagina principal de nuestra pagina.*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    width: 100%;
+}
+
+.home_img {
+    background-image: url('../img/home.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome {
+    background-color: #B771E5;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.categoriesDiv h1 {
+    text-align: center;
+    text-shadow: black 1px 0 1px;
+    text-transform: uppercase;
+}
+
+.restaurantes {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+    margin-bottom: 4rem;
+}
+
+.restaurante {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    height: fit-content;
+}
+
+.restaurante h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #B771E5;
+}
+
+.saveRestaurant {
+    cursor: pointer;
+    color: black;
+}
+
+.restaurante p {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem;
+}
+
+.restauranteImg {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.buttonsMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+
+.restaurante button {
+    margin-top: 1rem;
+    background-color: #B771E5;
+    color: white;
+    cursor: pointer;
+    border: 0.1rem solid black;
+    transition: background-color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.restaurante button:hover {
+    background-color: #AF47D2;
+}
+
+
+#idMapa {
+    margin-top: 2rem;
+    height: 20rem;
+    width: 100%;
+}
+
+body.modalActive {
+    overflow: hidden;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .restaurantes {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        padding: 0 1rem;
+        margin-bottom: 4rem;
+    }
+}
