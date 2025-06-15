@@ -28,7 +28,7 @@ class SPOONBOOKINGPAGE
     FROM reserva r
     JOIN restaurante res ON r.restaurante_id = res.id
     WHERE r.usuario_id = :userId
-    ORDER BY r.fecha DESC");
+    ORDER BY r.fecha_reserva DESC");
 
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
