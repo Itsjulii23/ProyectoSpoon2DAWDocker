@@ -268,7 +268,7 @@ function mostrarModalValoraciones(reviewsdata) {
             reviewDiv.innerHTML = `
                 <h3>${review.usuario_nombre}</h3>
                 <p>${review.comentario}</p>
-                <p>${review.puntuacion}/5</p>
+                <p>${review.puntuacion}/5⭐</p>
             `;
             modalContainer.appendChild(reviewDiv);
         });

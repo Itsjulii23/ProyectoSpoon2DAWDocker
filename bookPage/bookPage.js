@@ -187,7 +187,7 @@ function insertarReserva(event, restauranteId) {
         .then(() => {
             mostrarModal(`Has realizado tu reserva con éxito.`);
             setTimeout(() => {
-                window.location.href = "../ProfilePage/profilePage.html";
+                window.location.href = "../bookingPage/bookingPage.html";
             }, 3000);
         })
         .catch((error) => {
