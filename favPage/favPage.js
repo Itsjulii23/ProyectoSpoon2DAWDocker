@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "../loginPage/loginPage.html";
                 return;
             }
-            console.log("Sesión iniciada como:", data.usuario);
             window.userId = data.usuario.id;
             selectRestaurantesFav(window.userId);
         })
@@ -105,7 +104,6 @@ function selectRestaurantesFav(userId) {
                 if (event.target.classList.contains("eliminarGuardado")) {
                     event.preventDefault();
                     const idRestauranteFav = event.target.id;
-                    console.log(idRestauranteFav)
                     deleteRestauranteFav(idRestauranteFav);
                 }
             });
@@ -176,7 +174,6 @@ function mostrarModalValoraciones(reviewsdata) {
 function deleteRestauranteFav(idRestauranteFav) {
     peticion.accion = "deleteRestauranteFav";
     peticion.idRestauranteFav = idRestauranteFav;
-    console.log(idRestauranteFav);
     postData("favPage.php", {data: peticion})
         .then(() => {
             mostrarModal("Restaurante favorito eliminado con éxito.");

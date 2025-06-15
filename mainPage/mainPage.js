@@ -302,7 +302,6 @@ document.addEventListener("click", function (event) {
         peticion.idUser = window.userId;
         peticion.idRestaurante = idRestaurante;
         postData("restaurantes.php", {data: peticion}).then((response) => {
-            console.log(response);
             if (response.status === 'exists') {
                 mostrarModal("Este restaurante ya está en tus favoritos.");
             } else if (response.status === 'ok') {

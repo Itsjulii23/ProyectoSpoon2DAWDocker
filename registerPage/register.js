@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data.status === "ok") {
                 window.location.href = "../ProfilePage/profilePage.html";
             } else {
-                console.log("Sesión no iniciada");
                 cargarHTML();
                 document.getElementById("btnReservar").addEventListener("click", registro);
             }

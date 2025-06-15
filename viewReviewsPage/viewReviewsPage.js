@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "../loginPage/loginPage.html";
                 return;
             }
-            console.log("Sesión iniciada como:", data.usuario);
             window.userId = data.usuario.id;
             cargarValoraciones(window.userId);
         })
