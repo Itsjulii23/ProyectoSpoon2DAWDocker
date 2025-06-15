@@ -211,6 +211,11 @@ function cambiarCategorias() {
         ${window.isLoggedIn ? `<span class="saveRestaurant" id="${restaurante[k].id}"><i class="material-icons">menu_book</i></span>` : ''}
     </h3>
     <p>${restaurante[k].descripcion}</p>
+        <p>
+        🕘 Horario:<br>
+        📅 Miércoles a domingo<br>
+        🍽️ 12:00 - 16:00 / 20:00 - 23:00
+    </p>
     <img class="restauranteImg" src="../${restaurante[k].img}" alt="Restaurante">
     <div class="buttonsMain">
         <button onclick="window.location.href='../bookPage/bookPage.html?id=${restaurante[k].id}'">Reservar</button>
