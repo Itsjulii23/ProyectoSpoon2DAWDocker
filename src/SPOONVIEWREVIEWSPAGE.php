@@ -23,14 +23,15 @@ class SPOONVIEWREVIEWSPAGE
     static public function cargarValoraciones(int $userId): ?array
     {
         $stmt = self::$pdo->prepare("
-        SELECT v.*, 
-               res.nombre AS nombre_restaurante,
-               u.user AS nombre_usuario,
-               u.email AS email_usuario
-        FROM valoracion v
-        JOIN restaurante res ON v.restaurante_id = res.id
-        JOIN usuario u ON v.usuario_id = u.id
-        WHERE v.usuario_id = :userId
+    SELECT v.*, 
+           res.nombre AS nombre_restaurante,
+           u.user AS nombre_usuario,
+           u.email AS email_usuario
+    FROM valoracion v
+    JOIN restaurante res ON v.restaurante_id = res.id
+    JOIN usuario u ON v.usuario_id = u.id
+    WHERE v.usuario_id = :userId
+    ORDER BY v.id DESC
     ");
 
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);

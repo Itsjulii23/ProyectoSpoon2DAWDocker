@@ -24,10 +24,11 @@ class SPOONBOOKINGPAGE
     static public function selectReservas(int $userId): ?array
     {
         $stmt = self::$pdo->prepare("
-        SELECT r.*, res.nombre AS nombre_restaurante, res.img AS imagen_restaurante
-        FROM reserva r
-        JOIN restaurante res ON r.restaurante_id = res.id
-        WHERE r.usuario_id = :userId");
+    SELECT r.*, res.nombre AS nombre_restaurante, res.img AS imagen_restaurante
+    FROM reserva r
+    JOIN restaurante res ON r.restaurante_id = res.id
+    WHERE r.usuario_id = :userId
+    ORDER BY r.fecha DESC");
 
         $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
         $stmt->execute();
