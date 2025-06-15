@@ -40,7 +40,7 @@ class SPOONMAINPAGETest extends TestCase
 
     public function testEsUnRestauranteFavoritoDelUsuarioReturnsBool()
     {
-        $idUser = 17;
+        $idUser = 1;
         $idRestaurante = 1;
         $result = SPOONMAINPAGE::isRestaurantFav($idUser, $idRestaurante);
         $this->assertTrue($result);

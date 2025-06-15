@@ -70,10 +70,12 @@ function selectRestaurantesFav(userId) {
     <h3>${restaurantes.nombre}</h3>
     <p>${restaurantes.descripcion}</p>
     <img class="restauranteImg" src="../${imgSrc}" alt="Restaurante">
+        <div class="buttonsFav">
         <button onclick="window.location.href='../bookPage/bookPage.html?id=${restaurantes.id}'">Hacer Reservar</button>
         <button class="viewReviewBtn" data-id="${restaurantes.id}">Ver Reseñas</button>
         <button onclick="window.location.href='../reviewsPage/reviewPage.html?id=${restaurantes.id}'">Hacer Reseña</button>
         <button class="eliminarGuardado" id="${restaurantes.id}">Eliminar de Favoritos</button>
+        </div>
 </div>
             `;
             });

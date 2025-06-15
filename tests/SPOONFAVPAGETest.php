@@ -14,7 +14,7 @@ class SPOONFAVPAGETest extends TestCase
 
     public function testSelectFavRestaurantesReturnsArray()
     {
-        $iduser = 17;
+        $iduser = 1;
         $result = SPOONFAVPAGE::selectRestaurantesFav($iduser);
         $this->assertIsArray($result);
     }

@@ -47,9 +47,9 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-.buttonsMain {
+.buttonsFav {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -87,5 +87,11 @@ h2 {
         gap: 2rem;
         padding: 0 1rem;
         margin-bottom: 4rem;
+    }
+
+    .buttonsFav {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
     }
 }

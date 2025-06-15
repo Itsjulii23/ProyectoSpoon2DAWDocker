@@ -14,7 +14,7 @@ class SPOONBOOKINGPAGETest extends TestCase
 
     public function testSelectReservasReturnsArray()
     {
-        $userId = 17;
+        $userId = 1;
         $result = SPOONBOOKINGPAGE::selectReservas($userId);
         $this->assertIsArray($result);
     }

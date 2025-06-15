@@ -14,7 +14,7 @@ class SPOONVIEWREVIEWSPAGETest extends TestCase
 
     public function testSelectRestauranteIdReturnsArray()
     {
-        $idUser = 17;
+        $idUser = 1;
         $result = SPOONVIEWREVIEWSPAGE::cargarValoraciones($idUser);
         $this->assertIsArray($result);
     }
